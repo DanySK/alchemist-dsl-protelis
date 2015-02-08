@@ -1,0 +1,107 @@
+grammar it.unibo.alchemist.language.protelis.ProtelisDSL with it.unibo.alchemist.language.protelis.Protelis
+
+generate protelisDSL "http://alchemist.apice.unibo.it/ProtelisDSL"
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+import "http://alchemist.apice.unibo.it/Protelis" as fieldcalculus
+
+Environment :
+	(constants+=ConstantDeclaration)*
+	(('environment' (name=ATOM)? ('type' type=JavaConstructor)) | 'default environment')
+	linkingRule=LinkingRule
+	(position=Position)?
+	('generate scenario number ' internalRNGSeed=SINT)?
+	(random=RandomEngine)?
+	(time=Time)?
+	(layers+=Layer)*
+	programs+=Prog+
+	(constrains+=Constrain)*
+	elements+=NodeGroup+
+	 ;
+	 
+Position:
+ 	'with position type' type=JAVACLASS;
+	 
+Layer: 'layer' type=JavaConstructor;
+
+Prog: ('field calculus program' name=ATOM (program=Program | programlink=[fieldcalculus::Program]) '@' (timeDistribution=JavaConstructor | rate=Number) (',' (timeDistributionSend=JavaConstructor | rateSend=Number))?|
+	'reaction pool' name=ATOM reactions+=Reaction+
+);
+
+LinkingRule:
+ 	('with communication model' type=JavaConstructor) | 'linking nodes in range' range=Number;
+ 	
+RandomEngine: 	
+ 	'with random' ('type' type=JAVACLASS)? 'seed' seed=Seed ;
+ 	
+Time: 	
+ 	'with time type' type=JAVACLASS ;
+
+NodeGroup:
+	'place' ((gtype='single' 'node' ('named' name=ATOM)? ('of type' type=JavaConstructor)? 'at point' '('x=Number','y=Number')') |
+	(numNodes=INT 'nodes' ('of type' type=JavaConstructor)? 'within' 
+		(
+			(gtype='rect' '('x=Number','y=Number','w=Number','h=Number')' ('interval' '('ix=Number','iy=Number')' ('tolerance' '('tx=Number','ty=Number')')?)?) |
+			(gtype='circle' '('x=Number','y=Number','r=Number')'?) |
+			(gtype='shape' shape=JavaConstructor)
+		)
+	))
+	('containing' contents+=[Constrain|ATOM]+)?
+	('with program' reactions+=[Prog|ATOM]+)? ;
+
+Reaction :
+	('reaction' name=ATOM)?
+	(
+		('reaction' type=JavaConstructor
+			(
+			('[' conditions+=Condition* ']' ('-' (timeDistribution=JavaConstructor | rate=Number) '->' | '-->') '[' actions+=Action* ']') |
+			'empty'
+			)
+		) |
+		(
+		'[' conditions+=Condition+ ']' ('-' (timeDistribution=JavaConstructor | rate=Number) '->' | '-->') '[' actions+=Action* ']' |
+		'['']' ('-' (timeDistribution=JavaConstructor | rate=Number) '->' | '-->') '[' actions+=Action+ ']'
+    	)
+    );
+
+Condition :
+    ('condition' type=JavaConstructor) (',')?;
+
+Action :
+    (('action'|'agent') type=JavaConstructor) (',')?;
+    
+
+Number :
+	name=[ConstantDeclaration|ATOM] | v=SDOUBLE
+;
+	
+ConstantDeclaration:
+	'val' name=ATOM '=' (v=SDOUBLE | vString = STRING)
+;
+
+Constrain :
+ 	'content' name=ATOM ':' 'in' (
+ 		ctype='all' |
+ 		ctype='point' '('x=Number','y=Number')' |
+ 		ctype='rect' '('x=Number','y=Number','w=Number','h=Number')'
+ 		)
+ 		contents+=Content+;	
+ 		
+Content : 
+	( name=ATOM '<-' (valNum=Number | valBool=BOOLEAN | valString=STRING));
+
+Seed:('random' | SINT) ;
+
+JavaConstructor: javaClass=JAVACLASS '(' (javaArgList=ArgList)? ')';
+
+JAVAPACKAGE : ATOM('.'ATOM)*;
+
+JAVACLASS : UPPERCASE | JAVAPACKAGE'.'UPPERCASE;
+
+ArgList: args += Arg (',' args += Arg)* ;
+Arg: val=ArgTerm | var=Number;
+ArgTerm: STRING | BOOLEAN;
+
+terminal ML_COMMENT	: '/*' -> '*/';
+SINT returns ecore::EInt: '-'? INT;
+SDOUBLE returns ecore::EDouble: '-'? DOUBLE;
