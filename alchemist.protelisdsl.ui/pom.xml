@@ -18,11 +18,4 @@
 		<version>0.0.0</version>
 		<relativePath>../alchemist.protelisdsl.parent</relativePath>
 	</parent>
-	<dependencies>
-		<dependency>
-			<groupId>${project.groupId}</groupId>
-			<artifactId>alchemist.protelis.ui</artifactId>
-			<version>0.0.0</version>
-		</dependency>
-	</dependencies>
 </project>
