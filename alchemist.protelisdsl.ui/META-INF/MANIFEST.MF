@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: alchemist.protelisdsl.ui
 Bundle-Vendor: My Company
-Bundle-Version: 0.0.0
+Bundle-Version: 1.0.0
 Bundle-SymbolicName: alchemist.protelisdsl.ui; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: alchemist.protelisdsl;visibility:=reexport,
@@ -17,7 +17,7 @@ Require-Bundle: alchemist.protelisdsl;visibility:=reexport,
  org.eclipse.xtext.common.types.ui,
  org.eclipse.xtext.ui.codetemplates.ui,
  org.eclipse.compare,
- alchemist.protelis.ui;bundle-version="0.0.0"
+ alchemist.protelis.ui;bundle-version="1.0.0"
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: it.unibo.alchemist.language.protelis.ui.quickfix,

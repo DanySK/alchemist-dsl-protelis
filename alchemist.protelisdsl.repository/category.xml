@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <bundle id="alchemist.protelis" version="0.0.0">
-      <category name="protelis"/>
+   <bundle id="alchemist.protelisdsl" version="1.0.0">
+      <category name="protelisdsl"/>
    </bundle>
-   <bundle id="alchemist.protelis.ui" version="0.0.0">
-      <category name="protelis"/>
+   <bundle id="alchemist.protelisdsl.ui" version="1.0.0">
+      <category name="protelisdsl"/>
    </bundle>
-   <category-def name="protelis" label="Protelis"/>
+   <category-def name="protelisdsl" label="Alchemist Protelis DSL"/>
 </site>
