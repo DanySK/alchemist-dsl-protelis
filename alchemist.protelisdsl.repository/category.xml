@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <bundle id="alchemist.protelisdsl" version="1.1.0">
+   <bundle id="alchemist.protelisdsl" version="1.2.0">
       <category name="protelisdsl"/>
    </bundle>
-   <bundle id="alchemist.protelisdsl.ui" version="1.1.0">
+   <bundle id="alchemist.protelisdsl.ui" version="1.2.0">
       <category name="protelisdsl"/>
    </bundle>
    <category-def name="protelisdsl" label="Alchemist Protelis DSL"/>
