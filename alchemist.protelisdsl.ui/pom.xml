@@ -15,7 +15,7 @@
 	<parent>
 		<groupId>it.unibo.alchemist</groupId>
 		<artifactId>alchemist.protelisdsl.parent</artifactId>
-		<version>1.1.0</version>
+		<version>1.2.0</version>
 		<relativePath>../alchemist.protelisdsl.parent</relativePath>
 	</parent>
 </project>
