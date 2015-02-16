@@ -5,8 +5,8 @@ Bundle-Vendor: My Company
 Bundle-Version: 1.1.0
 Bundle-SymbolicName: alchemist.protelisdsl.tests; singleton:=true
 Bundle-ActivationPolicy: lazy
-Require-Bundle: alchemist.protelisdsl,
- alchemist.protelisdsl.ui,
+Require-Bundle: alchemist.protelisdsl;bundle-version="1.1.0",
+ alchemist.protelisdsl.ui;bundle-version="1.1.0",
  org.eclipse.core.runtime,
  org.eclipse.xtext.junit4,
  org.eclipse.ui.workbench;resolution:=optional,
