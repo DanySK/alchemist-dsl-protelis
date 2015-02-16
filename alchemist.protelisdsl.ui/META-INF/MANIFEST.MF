@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: alchemist.protelisdsl.ui
-Bundle-Vendor: My Company
+Bundle-Vendor: Alma Mater Studiorum Università di Bologna
 Bundle-Version: 1.2.0
 Bundle-SymbolicName: alchemist.protelisdsl.ui; singleton:=true
 Bundle-ActivationPolicy: lazy
