@@ -7,7 +7,7 @@ import "http://alchemist.apice.unibo.it/Protelis" as fieldcalculus
 
 Environment :
 	(constants+=ConstantDeclaration)*
-	(('environment' (name=ATOM)? ('type' type=JavaConstructor)) | 'default environment')
+	(('environment' (name=ID)? ('type' type=JavaConstructor)) | 'default environment')
 	linkingRule=LinkingRule
 	(position=Position)?
 	('generate scenario number ' internalRNGSeed=SINT)?
@@ -20,25 +20,25 @@ Environment :
 	 ;
 	 
 Position:
- 	'with position type' type=JAVACLASS;
+ 	'with position type' type=QualifiedName;
 	 
 Layer: 'layer' type=JavaConstructor;
 
-Prog: ('field calculus program' name=ATOM (program=Program | programlink=[fieldcalculus::Program]) '@' (timeDistribution=JavaConstructor | rate=Number) (',' (timeDistributionSend=JavaConstructor | rateSend=Number))?|
-	'reaction pool' name=ATOM reactions+=Reaction+
+Prog: ('protelis program' name=ID (program=Program | => programlink=[fieldcalculus::Program]) '@' (timeDistribution=JavaConstructor | rate=Number) (',' (timeDistributionSend=JavaConstructor | rateSend=Number))?|
+	'reaction pool' name=ID reactions+=Reaction+
 );
 
 LinkingRule:
  	('with communication model' type=JavaConstructor) | 'linking nodes in range' range=Number;
  	
 RandomEngine: 	
- 	'with random' ('type' type=JAVACLASS)? 'seed' seed=Seed ;
+ 	'with random' ('type' type=QualifiedName)? 'seed' seed=Seed ;
  	
 Time: 	
- 	'with time type' type=JAVACLASS ;
+ 	'with time type' type=QualifiedName ;
 
 NodeGroup:
-	'place' ((gtype='single' 'node' ('named' name=ATOM)? ('of type' type=JavaConstructor)? 'at point' '('x=Number','y=Number')') |
+	'place' ((gtype='single' 'node' ('named' name=ID)? ('of type' type=JavaConstructor)? 'at point' '('x=Number','y=Number')') |
 	(numNodes=INT 'nodes' ('of type' type=JavaConstructor)? 'within' 
 		(
 			(gtype='rect' '('x=Number','y=Number','w=Number','h=Number')' ('interval' '('ix=Number','iy=Number')' ('tolerance' '('tx=Number','ty=Number')')?)?) |
@@ -46,11 +46,11 @@ NodeGroup:
 			(gtype='shape' shape=JavaConstructor)
 		)
 	))
-	('containing' contents+=[Constrain|ATOM]+)?
-	('with program' reactions+=[Prog|ATOM]+)? ;
+	('containing' contents+=[Constrain]+)?
+	('with program' reactions+=[Prog]+)? ;
 
 Reaction :
-	('reaction' name=ATOM)?
+	('reaction' name=ID)?
 	(
 		('reaction' type=JavaConstructor
 			(
@@ -72,15 +72,15 @@ Action :
     
 
 Number :
-	name=[ConstantDeclaration|ATOM] | v=SDOUBLE
+	name=[ConstantDeclaration] | v=SDOUBLE
 ;
 	
 ConstantDeclaration:
-	'val' name=ATOM '=' (v=SDOUBLE | vString = STRING)
+	'val' name=ID '=' (v=SDOUBLE | vString = STRING)
 ;
 
 Constrain :
- 	'content' name=ATOM ':' 'in' (
+ 	'content' name=ID ':' 'in' (
  		ctype='all' |
  		ctype='point' '('x=Number','y=Number')' |
  		ctype='rect' '('x=Number','y=Number','w=Number','h=Number')'
@@ -88,15 +88,11 @@ Constrain :
  		contents+=Content+;	
  		
 Content : 
-	( name=ATOM '<-' (valNum=Number | valBool=BOOLEAN | valString=STRING));
+	( name=ID '<-' (valNum=Number | valBool=BOOLEAN | valString=STRING));
 
 Seed:('random' | SINT) ;
 
-JavaConstructor: javaClass=JAVACLASS '(' (javaArgList=ArgList)? ')';
-
-JAVAPACKAGE : ATOM('.'ATOM)*;
-
-JAVACLASS : UPPERCASE | JAVAPACKAGE'.'UPPERCASE;
+JavaConstructor: javaClass=QualifiedName '(' (javaArgList=ArgList)? ')';
 
 ArgList: args += Arg (',' args += Arg)* ;
 Arg: val=ArgTerm | var=Number;
