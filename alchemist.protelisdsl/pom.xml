@@ -127,7 +127,7 @@
 	<parent>
 		<groupId>it.unibo.alchemist</groupId>
 		<artifactId>alchemist.protelisdsl.parent</artifactId>
-		<version>1.2.0</version>
+		<version>2.0.0</version>
 		<relativePath>../alchemist.protelisdsl.parent/pom.xml</relativePath>
 	</parent>
 	<dependencies>
