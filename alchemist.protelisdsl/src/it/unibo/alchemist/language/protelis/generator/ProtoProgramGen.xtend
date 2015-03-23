@@ -26,6 +26,7 @@ class ProtoProgramGen implements XMLGenerator {
 	private static final Arg ENV = genArg("ENV")
 	private static final Arg NODE = genArg("NODE")
 	private static final Arg REACTION = genArg("REACTION")
+	private static final Arg RANDOM = genArg("RANDOM")
 	
 	private final ConditionGen cond
 	private final ActionGen progact
@@ -69,6 +70,7 @@ class ProtoProgramGen implements XMLGenerator {
 		jcp.javaArgList.args.add(ENV);
 		jcp.javaArgList.args.add(NODE);
 		jcp.javaArgList.args.add(REACTION);
+		jcp.javaArgList.args.add(RANDOM);
 		jcp.javaArgList.args.add(genArg(progString));
 		progact = new ActionGen(jcp, pn, 0, 0, varmap);
 		actname = Utils.genActName(pn,0,0)

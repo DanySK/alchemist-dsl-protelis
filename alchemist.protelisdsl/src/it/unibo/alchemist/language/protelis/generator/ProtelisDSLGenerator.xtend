@@ -29,7 +29,7 @@ import org.eclipse.xtext.generator.IGenerator
  */
 class ProtelisDSLGenerator implements IGenerator {
 	
-	private static final String INIT = "field calculus program"
+	private static final String INIT = "protelis program"
 	private static final String END = "@"
 	private static final char[] SKIP = #['\n','\t',' ']
 	

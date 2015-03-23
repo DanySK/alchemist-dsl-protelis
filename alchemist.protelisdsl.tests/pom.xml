@@ -44,7 +44,7 @@
 	<parent>
 		<groupId>it.unibo.alchemist</groupId>
 		<artifactId>alchemist.protelisdsl.parent</artifactId>
-		<version>2.0.0</version>
+		<version>${dsl-version}</version>
 		<relativePath>../alchemist.protelisdsl.parent</relativePath>
 	</parent>
 </project>

@@ -4,11 +4,13 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>it.unibo.alchemist</groupId>
 	<artifactId>alchemist.protelisdsl.parent</artifactId>
-	<version>2.0.0</version>
+	<version>${dsl-version}</version>
 	<name>alchemist-protelis-dsl</name>
 	<description>DSL for writing simulations in Protelis</description>
 	<packaging>pom</packaging>
 	<properties>
+		<dsl-version>2.0.1</dsl-version>
+		<protelis-version>[2.0.0,3.0.0)</protelis-version>
 		<tycho-version>0.22.0</tycho-version>
 		<xtext-version>2.7.3</xtext-version>
 		<!-- This property must be overridden on sign-server -->
@@ -223,12 +225,12 @@
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>alchemist.protelis</artifactId>
-			<version>2.0.0</version>
+			<version>${protelis-version}</version>
 		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>alchemist.protelis.ui</artifactId>
-			<version>2.0.0</version>
+			<version>${protelis-version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.commons</groupId>

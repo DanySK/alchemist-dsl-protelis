@@ -127,19 +127,19 @@
 	<parent>
 		<groupId>it.unibo.alchemist</groupId>
 		<artifactId>alchemist.protelisdsl.parent</artifactId>
-		<version>2.0.0</version>
+		<version>${dsl-version}</version>
 		<relativePath>../alchemist.protelisdsl.parent/pom.xml</relativePath>
 	</parent>
 	<dependencies>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>alchemist.protelis</artifactId>
-			<version>2.0.0</version>
+			<version>${protelis-version}</version>
 		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>alchemist.protelis.ui</artifactId>
-			<version>2.0.0</version>
+			<version>${protelis-version}</version>
 		</dependency>
 	</dependencies>
 </project>
