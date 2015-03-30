@@ -24,7 +24,11 @@ Position:
 	 
 Layer: 'layer' type=JavaConstructor;
 
-Prog: ('protelis program' name=ID (program=Program | => programlink=[fieldcalculus::Program]) '@' (timeDistribution=JavaConstructor | rate=Number) (',' (timeDistributionSend=JavaConstructor | rateSend=Number))?|
+Prog: ('protelis program' name=ID (
+	program=Program
+	| 'from' => programlink=[fieldcalculus::Program|ProtelisQualifiedName]
+	)
+	'@' (timeDistribution=JavaConstructor | rate=Number) (',' (timeDistributionSend=JavaConstructor | rateSend=Number))?|
 	'reaction pool' name=ID reactions+=Reaction+
 );
 
@@ -93,6 +97,8 @@ Content :
 Seed:('random' | SINT) ;
 
 JavaConstructor: javaClass=QualifiedName '(' (javaArgList=ArgList)? ')';
+
+QualifiedName: (AID '.')? AID;
 
 ArgList: args += Arg (',' args += Arg)* ;
 Arg: val=ArgTerm | var=Number;

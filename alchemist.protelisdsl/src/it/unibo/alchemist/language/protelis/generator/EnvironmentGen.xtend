@@ -69,7 +69,7 @@ class EnvironmentGen implements XMLGenerator {
 		env.programs.forEach [ pr, prn |
 			val list = new ArrayList
 			pools.put(pr.name, list)
-			if(pr.program == null && pr.programlink == null) {
+			if(pr.program == null) {
 				pr.reactions.forEach [ re, ren |
 					val reaction = new ReactionGen(re, prn, ren, varmap)
 					list.add(reaction)
