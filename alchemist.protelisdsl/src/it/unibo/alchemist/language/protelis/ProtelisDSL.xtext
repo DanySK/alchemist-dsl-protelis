@@ -25,11 +25,11 @@ Position:
 Layer: 'layer' type=JavaConstructor;
 
 Prog: ('protelis program' name=ID (
+	=> programName=ProtelisQualifiedName |
 	program=Program
-	| 'from' => programlink=[fieldcalculus::Program|ProtelisQualifiedName]
 	)
 	'@' (timeDistribution=JavaConstructor | rate=Number) (',' (timeDistributionSend=JavaConstructor | rateSend=Number))?|
-	'reaction pool' name=ID reactions+=Reaction+
+	pool?='reaction pool' name=ID reactions+=Reaction+
 );
 
 LinkingRule:

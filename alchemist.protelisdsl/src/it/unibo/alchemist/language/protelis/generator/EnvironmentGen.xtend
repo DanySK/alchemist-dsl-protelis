@@ -62,14 +62,14 @@ class EnvironmentGen implements XMLGenerator {
 		]
 		val prMap = new ConcurrentHashMap
 		var prIndex = 0;
-		for(Prog p: env.programs.filter[it.program != null]) {
+		for(Prog p: env.programs.filter[it.program != null || it.programName != null]) {
 			prMap.put(p, programs.get(prIndex++))
 		}
 		val pools = new HashMap<CharSequence, List<XMLGenerator>>
 		env.programs.forEach [ pr, prn |
 			val list = new ArrayList
 			pools.put(pr.name, list)
-			if(pr.program == null) {
+			if(pr.pool) {
 				pr.reactions.forEach [ re, ren |
 					val reaction = new ReactionGen(re, prn, ren, varmap)
 					list.add(reaction)
@@ -80,7 +80,7 @@ class EnvironmentGen implements XMLGenerator {
 						reaction.addAction(new ActionGen(act, prn, ren, actn, varmap))
 					]
 				]
-			} else if(pr.program != null) {
+			} else {
 				list.add(new ProtoProgramGen(pr, prMap.get(pr), prn, varmap))
 			}
 		]

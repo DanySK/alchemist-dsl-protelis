@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/alchemist.protelisdsl/src-gen" editDirectory="/alchemist.protelisdsl.edit/src"
+    editorDirectory="/alchemist.protelisdsl.editor/src" modelPluginID="alchemist.protelisdsl"
+    forceOverwrite="true" modelName="ProtelisDSL" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="6.0" copyrightFields="false" editPluginID="alchemist.protelisdsl.edit"
+    editorPluginID="alchemist.protelisdsl.editor" runtimeVersion="2.10" usedGenPackages="platform:/resource/alchemist.protelis/model/generated/Protelis.genmodel#//protelis">
+  <genPackages prefix="ProtelisDSL" basePackage="it.unibo.alchemist.language.protelis"
+      disposableProviderFactory="true" fileExtensions="psim" ecorePackage="ProtelisDSL.ecore#/">
+    <genClasses ecoreClass="ProtelisDSL.ecore#//Environment">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//Environment/constants"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProtelisDSL.ecore#//Environment/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//Environment/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//Environment/linkingRule"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//Environment/position"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProtelisDSL.ecore#//Environment/internalRNGSeed"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//Environment/random"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//Environment/time"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//Environment/layers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//Environment/programs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//Environment/constrains"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//Environment/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="ProtelisDSL.ecore#//Position">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProtelisDSL.ecore#//Position/type"/>
+    </genClasses>
+    <genClasses ecoreClass="ProtelisDSL.ecore#//Layer">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//Layer/type"/>
+    </genClasses>
+    <genClasses ecoreClass="ProtelisDSL.ecore#//Prog">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProtelisDSL.ecore#//Prog/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProtelisDSL.ecore#//Prog/programName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//Prog/program"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//Prog/timeDistribution"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//Prog/rate"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//Prog/timeDistributionSend"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//Prog/rateSend"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProtelisDSL.ecore#//Prog/pool"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//Prog/reactions"/>
+    </genClasses>
+    <genClasses ecoreClass="ProtelisDSL.ecore#//LinkingRule">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//LinkingRule/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//LinkingRule/range"/>
+    </genClasses>
+    <genClasses ecoreClass="ProtelisDSL.ecore#//RandomEngine">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProtelisDSL.ecore#//RandomEngine/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProtelisDSL.ecore#//RandomEngine/seed"/>
+    </genClasses>
+    <genClasses ecoreClass="ProtelisDSL.ecore#//Time">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProtelisDSL.ecore#//Time/type"/>
+    </genClasses>
+    <genClasses ecoreClass="ProtelisDSL.ecore#//NodeGroup">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProtelisDSL.ecore#//NodeGroup/gtype"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProtelisDSL.ecore#//NodeGroup/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//NodeGroup/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//NodeGroup/x"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//NodeGroup/y"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProtelisDSL.ecore#//NodeGroup/numNodes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//NodeGroup/w"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//NodeGroup/h"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//NodeGroup/ix"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//NodeGroup/iy"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//NodeGroup/tx"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//NodeGroup/ty"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//NodeGroup/r"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//NodeGroup/shape"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//NodeGroup/contents"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//NodeGroup/reactions"/>
+    </genClasses>
+    <genClasses ecoreClass="ProtelisDSL.ecore#//Reaction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProtelisDSL.ecore#//Reaction/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//Reaction/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//Reaction/conditions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//Reaction/timeDistribution"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//Reaction/rate"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//Reaction/actions"/>
+    </genClasses>
+    <genClasses ecoreClass="ProtelisDSL.ecore#//Condition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//Condition/type"/>
+    </genClasses>
+    <genClasses ecoreClass="ProtelisDSL.ecore#//Action">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//Action/type"/>
+    </genClasses>
+    <genClasses ecoreClass="ProtelisDSL.ecore#//Number">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//Number/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProtelisDSL.ecore#//Number/v"/>
+    </genClasses>
+    <genClasses ecoreClass="ProtelisDSL.ecore#//ConstantDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProtelisDSL.ecore#//ConstantDeclaration/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProtelisDSL.ecore#//ConstantDeclaration/v"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProtelisDSL.ecore#//ConstantDeclaration/vString"/>
+    </genClasses>
+    <genClasses ecoreClass="ProtelisDSL.ecore#//Constrain">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProtelisDSL.ecore#//Constrain/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProtelisDSL.ecore#//Constrain/ctype"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//Constrain/x"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//Constrain/y"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//Constrain/w"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//Constrain/h"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//Constrain/contents"/>
+    </genClasses>
+    <genClasses ecoreClass="ProtelisDSL.ecore#//Content">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProtelisDSL.ecore#//Content/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//Content/valNum"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProtelisDSL.ecore#//Content/valBool"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProtelisDSL.ecore#//Content/valString"/>
+    </genClasses>
+    <genClasses ecoreClass="ProtelisDSL.ecore#//JavaConstructor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProtelisDSL.ecore#//JavaConstructor/javaClass"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//JavaConstructor/javaArgList"/>
+    </genClasses>
+    <genClasses ecoreClass="ProtelisDSL.ecore#//ArgList">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//ArgList/args"/>
+    </genClasses>
+    <genClasses ecoreClass="ProtelisDSL.ecore#//Arg">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ProtelisDSL.ecore#//Arg/val"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ProtelisDSL.ecore#//Arg/var"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

@@ -9,7 +9,6 @@
 package it.unibo.alchemist.language.protelis.generator
 
 import java.util.Map
-import java.util.Objects
 import java.util.Random
 import it.unibo.alchemist.language.protelis.protelisDSL.ProtelisDSLFactory
 import it.unibo.alchemist.language.protelis.protelisDSL.Arg
@@ -44,8 +43,6 @@ class ProtoProgramGen implements XMLGenerator {
 	private double rate
 	
 	public new(Prog prog, String progString, int pn, Map<String, String> varmap) {
-		val p = prog.program
-		Objects.requireNonNull(p)
 		name = '''protoprogram_p«pn»'''
 		if(prog.timeDistribution == null) {
 			rate = Utils.pdn(prog.rate, varmap)
