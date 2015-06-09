@@ -9,7 +9,7 @@
 	<description>DSL for writing simulations in Protelis</description>
 	<packaging>pom</packaging>
 	<properties>
-		<protelis-version>[3.0.0,4.0.0)</protelis-version>
+		<protelis-version>[3.1.0,4.0.0)</protelis-version>
 		<tycho-version>0.22.0</tycho-version>
 		<xtext-version>2.8.1</xtext-version>
 		<!-- This property must be overridden on sign-server -->
