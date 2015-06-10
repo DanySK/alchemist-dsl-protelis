@@ -11,16 +11,16 @@ package it.unibo.alchemist.language.protelis.generator
 import it.unibo.alchemist.language.protelis.protelisDSL.Environment
 import java.io.File
 import java.io.FileInputStream
-import java.net.URI
+import java.net.URISyntaxException
+import java.net.URL
 import java.util.ArrayList
 import java.util.StringTokenizer
+import java.util.regex.Pattern
 import org.apache.commons.io.IOUtils
-import org.eclipse.core.resources.IResource
-import org.eclipse.core.resources.ResourcesPlugin
+import org.eclipse.core.runtime.FileLocator
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.generator.IGenerator
-import java.util.regex.Pattern
 
 /**
  * Generates code from your model files on save.
@@ -49,10 +49,12 @@ class ProtelisDSLGenerator implements IGenerator {
 	}
 	
 	def doGenerateString(Resource resource) {
-		val l = new ArrayList
-		val platformString = resource.URI.toPlatformString(true);
-		val asd = (ResourcesPlugin.getWorkspace.root as IResource).locationURI + platformString
-		val f = new File(new URI(asd))
+		val url = FileLocator.resolve(new URL(resource.URI.toString))
+		val f = try {
+				new File(url.toURI)
+			} catch (URISyntaxException e) {
+				new File(url.path)
+			}
 		val str = IOUtils.toString(new FileInputStream(f))
 		/*
 		 * Remove comments
@@ -62,6 +64,7 @@ class ProtelisDSLGenerator implements IGenerator {
 		 * Scan for programs
 		 */
 		val progMatcher = PROGRAM_PATTERN.matcher(progString)
+		val l = new ArrayList
 		while(progMatcher.find) {
 			l.add(progMatcher.group(PROGRAM_CAPTURING_GROUP_NAME))
 		}
