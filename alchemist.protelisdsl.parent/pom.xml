@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>it.unibo.alchemist</groupId>
 	<artifactId>alchemist.protelisdsl.parent</artifactId>
-	<version>3.0.1</version>
+	<version>3.0.2</version>
 	<name>alchemist-protelis-dsl</name>
 	<description>DSL for writing simulations in Protelis</description>
 	<packaging>pom</packaging>
