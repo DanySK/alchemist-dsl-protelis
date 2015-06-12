@@ -21,6 +21,8 @@ import org.eclipse.core.runtime.FileLocator
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.generator.IGenerator
+import java.net.MalformedURLException
+import java.io.InputStream
 
 /**
  * Generates code from your model files on save.
@@ -33,6 +35,7 @@ class ProtelisDSLGenerator implements IGenerator {
 	private static final String END = "@"
 	private static final String PROGRAM_CAPTURING_GROUP_NAME = "program"
 	private static final Pattern COMMENT_PATTERN = Pattern.compile("\\s*\\/\\/[^\\n]*\\n|\\/\\*.*?\\*\\/", Pattern.DOTALL)
+	private static final Pattern URI_PROTOCOL_PATTERN = Pattern.compile("^\\w+:");
 	/*
 	 * 1. Search for the INIT string
 	 * 
@@ -43,19 +46,38 @@ class ProtelisDSLGenerator implements IGenerator {
 	private static final Pattern PROGRAM_PATTERN = Pattern.compile(".*?" + INIT + "\\s+\\w+\\s+(?<" + PROGRAM_CAPTURING_GROUP_NAME + ">[^@]+?)\\s*" + END, Pattern.DOTALL)
 	
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
-		val file = doGenerateString(resource)
-		val name = new StringTokenizer(resource.URI.lastSegment, ".")
-		fsa.generateFile('''«name.nextElement».xml''', file)
-	}
-	
-	def doGenerateString(Resource resource) {
-		val url = FileLocator.resolve(new URL(resource.URI.toString))
-		val f = try {
+		val uri = resource.URI
+		val file = try {
+			val url = FileLocator.resolve(new URL(uri.toString))
+			val f = try {
 				new File(url.toURI)
 			} catch (URISyntaxException e) {
 				new File(url.path)
 			}
-		val str = IOUtils.toString(new FileInputStream(f))
+			doGenerateString(resource, new FileInputStream(f))
+		} catch (MalformedURLException e) {
+			/*
+			 * classpath:/ and other URIs: try to load them using the standard
+			 * Java Resource loader. To do so:
+			 * 
+			 * 1. cleanup the uri, removing the protocol
+			 * 
+			 * 2. get the URI content as 
+			 * 
+			 */
+			 var noproto = URI_PROTOCOL_PATTERN.matcher(uri.toString).replaceFirst("")
+			 if(!noproto.startsWith("/")) {
+			 	noproto = "/" + noproto
+			 }
+			 val jResStream = class.getResourceAsStream(noproto)
+			 doGenerateString(resource, jResStream)
+		}
+		val name = new StringTokenizer(resource.URI.lastSegment, ".")
+		fsa.generateFile('''«name.nextElement».xml''', file)
+	}
+	
+	def doGenerateString(Resource resource, InputStream is) {
+		val str = IOUtils.toString(is)
 		/*
 		 * Remove comments
 		 */
