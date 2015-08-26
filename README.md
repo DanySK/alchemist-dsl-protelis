@@ -25,7 +25,7 @@ A language that allows writing simulations running Protelis.
 	* Protelis DSL will appear in the plugin list. Select it and click Next.
 	* Follow the instructions, accept the license, wait for Eclipse to download and install the product, 
 
-## Test installation
+### Test installation
 
 * Open Eclipse on a workspace of your choice
 * Click on File -> New -> Java Project
@@ -54,12 +54,12 @@ place 100 nodes within rect (0,0,9,9) with program prog
 
 ## Usage
 
-## Writing simulations
+### Writing simulations
 
 
-## Running a simulation in Alchemist
+### Running a simulation in Alchemist
 
-To understand how to simulate, refer to the [Alchemist main project][alchemist-git] website.
+To understand how to simulate, refer to the [Alchemist main project][alchemist-git] website. The simulator can be downloaded from [here][https://github.com/DanySK/alchemist/releases]
 
 ### Basics
 
