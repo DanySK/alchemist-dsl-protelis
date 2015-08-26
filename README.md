@@ -49,12 +49,17 @@ protelis program prog
   
 place 100 nodes within rect (0,0,9,9) with program prog 
 ```
+* A folder named ``src-gen`` will appear, containing a ``test.xml`` file. This file can be loaded by [Alchemist][alchemist-git]
+* If such file is correctly generated, your installation has been successful.
 
 ## Usage
 
+## Writing simulations
 
 
-To understand how to simulate, refer to the [Alchemist main project][alchemist-git] website instead.
+## Running a simulation in Alchemist
+
+To understand how to simulate, refer to the [Alchemist main project][alchemist-git] website.
 
 ### Basics
 
