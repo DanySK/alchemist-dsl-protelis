@@ -10,7 +10,7 @@ A language that allows writing simulations running Protelis.
 * Install Xtext
 	* In Eclipse, click Help -> Eclipse Marketplace...
 	* In the search form enter "xtext", then press Enter
-	* One of the retrieved entries should be "Xtext 2.x.x", click Install
+	* One of the retrieved entries should be "Xtext 2.x.x" (version should be 2.7.3 or newer), click Install
 	* Follow the instructions, accept the license, wait for Eclipse to download and install the product, accept the installation and restart the IDE.
 * Install the Protelis Eclipse plug-in
 	* In Eclipse, click Help -> Install New Software
@@ -24,6 +24,31 @@ A language that allows writing simulations running Protelis.
 	* Press Enter
 	* Protelis DSL will appear in the plugin list. Select it and click Next.
 	* Follow the instructions, accept the license, wait for Eclipse to download and install the product, 
+
+## Test installation
+
+* Open Eclipse on a workspace of your choice
+* Click on File -> New -> Java Project
+* Give the project a name, then click "Finish"
+* Find the "src" folder
+* Create a test.psim file
+* Eclipse will prompt you with a question: ``Do you want to add the Xtext nature to the project "(your project name here")?``. Answer "Yes"
+	* If Eclipse does not ask you to add such nature, right click on the project, go to Configure -> Add Xtext Nature
+* Open the test.psim file
+* It should show an error
+* Type the following (you can use ctrl + space, or your user defined shortcut, and use autocompletion): 
+```
+val x = 1
+
+default environment
+linking nodes in range 1.5
+ 
+protelis program prog 
+1
+@x,x
+  
+place 100 nodes within rect (0,0,9,9) with program prog 
+```
 
 ## Usage
 
