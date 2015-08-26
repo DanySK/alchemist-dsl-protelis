@@ -13,12 +13,14 @@ A language that allows writing [Alchemist][Alchemist] simulations running Protel
 * Install the Protelis Eclipse plug-in
 	* In Eclipse, click Help -> Install New Software
 	* In the text field labelled "Work with:", enter: ``http://hephaestus.apice.unibo.it/protelis-dsl/stable/``
-	* Press Enter
+		* If you want to work with the last nightly, choose instead: ``http://hephaestus.apice.unibo.it/alchemist-build/alchemist-protelis-parser/alchemist.protelis.repository/target/repository/``
 	* Protelis will appear in the plugin list. Select it and click Next.
 	* Follow the instructions, accept the license, wait for Eclipse to download and install the product, 
 * Install the Protelis Simulations Eclipse plug-in
 	* In Eclipse, click Help -> Install New Software
 	* In the text field labelled "Work with:", enter: ``http://hephaestus.apice.unibo.it/protelis-simulation-dsl/stable/``
+		* If you want to work with the last nightly, choose instead: ``http://hephaestus.apice.unibo.it/alchemist-build/alchemist-dsl-protelis/alchemist.protelisdsl.repository/target/repository/``
+
 	* Press Enter
 	* Protelis DSL will appear in the plugin list. Select it and click Next.
 	* Follow the instructions, accept the license, wait for Eclipse to download and install the product, 
@@ -30,9 +32,9 @@ A language that allows writing [Alchemist][Alchemist] simulations running Protel
 * Give the project a name, then click "Finish"
 * Find the ``src`` folder
 * Create a ``test.psim`` file
-* Eclipse will prompt you with a question: ``Do you want to add the Xtext nature to the project "(your project name here")?``. Answer "Yes"
+* Eclipse will prompt you with a question: "Do you want to add the Xtext nature to the project "(your project name here")?". Answer "Yes"
 	* If Eclipse does not ask you to add such nature, right click on the project, go to Configure -> Add Xtext Nature
-* Open the test.psim file
+* Open the ``test.psim`` file
 * It should show an error
 * Type the following (you can use ctrl + space, or your user defined shortcut, and use autocompletion): 
 ```
@@ -169,7 +171,7 @@ We use a three level numbering, following the model of [Semantic Versioning][Sem
 
 [Alchemist]: http://danysk.github.io/alchemist/
 [alchemist-git]: https://github.com/DanySK/alchemist
-[Javadoc]: http://hephaestus.apice.unibo.it/alchemist-build/alchemist-dsl-protelis/build/docs/javadoc/
+[Javadoc]: http://hephaestus.apice.unibo.it/alchemist-build/alchemist-dsl-protelis/alchemist.protelisdsl/target/apidocs/
 [Jars]: https://drone.io/github.com/DanySK/alchemist-dsl-protelis/files
 [reports]: https://drone.io/github.com/DanySK/alchemist-dsl-protelis/files/build/reports/reports.tar
 [dashboard]: http://hephaestus.apice.unibo.it/alchemist-build/alchemist-dsl-protelis/build/reports/buildDashboard/
