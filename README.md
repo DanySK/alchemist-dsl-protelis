@@ -7,6 +7,11 @@ A language that allows writing simulations running Protelis.
 ## Setup
 
 * Download [the latest Eclipse for Java SE developers][eclipse]. Arch Linux users can use the package extra/eclipse-java, which is rather up-to-date.
+* Install Xtext
+	* In Eclipse, click Help -> Eclipse Marketplace...
+	* In the search form enter "xtext", then press Enter
+	* One of the retrieved entries should be "Xtext 2.x.x", click Install
+	* Follow the instructions, accept the license, wait for Eclipse to download and install the product, accept the installation and restart the IDE.
 * Install the Protelis Eclipse plug-in
 	* In Eclipse, click Help -> Install New Software
 	* In the text field labelled "Work with:", enter: ``http://137.204.107.70/protelis-dsl/stable/``
@@ -20,13 +25,11 @@ A language that allows writing simulations running Protelis.
 	* Protelis DSL will appear in the plugin list. Select it and click Next.
 	* Follow the instructions, accept the license, wait for Eclipse to download and install the product, 
 
-
-
 ## Usage
 
-Incarnation usage should be rather transparent, unless an extension of the incarnation is required for the experiment.
 
-To learn how to write simulations, please refer to the [SAPERE Domain-Specific Language][SAPERE-DSL]. To understand how to simulate, refer to the [Alchemist main project][alchemist-git] instead.
+
+To understand how to simulate, refer to the [Alchemist main project][alchemist-git] website instead.
 
 ### Basics
 
