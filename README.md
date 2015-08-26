@@ -72,60 +72,36 @@ Javadocs for latest build is available [here][Javadoc]. Please note that such do
 The documentation for any specific version of this library is released on Maven Central along with the code and the compiled jar file.
 
 
-### Downloads
-i
-The latest artifacts for this project can be downloaded [here][Jars]. This page includes three artifacts:
-* A jar file containing the compiled class files
-* A jar file containing the source code
-* A jar file containing the generated javadoc
-
-Complete build reports can be downloaded [here][reports]
-
-
-### Main project
-* [Build reports][dashboard]
-* [Test summary][test]
-* [FindBugs violations][findbugs]
-* [PMD violations][pmd]
-* [Checkstyle violations][checkstyle]
-
-
-### Tests
-* [FindBugs violations][findbugs-test]
-* [PMD violations][pmd-test]
-* [Checkstyle violations][checkstyle-test]
-
-
 ## Notes for Developers
 
 
 ### Importing the project
-The project has been developed using Eclipse, and can be easily imported in such IDE.
+The project has been developed using Eclipse, and can be imported in such IDE.
+
+## Project structure
+
+* *alchemist.protelisdsl.parent*:
+  the build point, which should pull in all of the others
+* *alchemist.protelisdsl*:
+  specifies the Protelis DSL and associated utilities using XText
+* *alchemist.protelisdsl.target*:
+  specifies the Eclipse runtime environment that the DSL plugin should
+  be compatible with.
+* *alchemist.protelisdsl.ui*:
+  Contains the Eclipse plugin to support Protelis editing
+* *alchemist.protelisdsl.repository*:
+  Packages for the automated install website for Eclipse
+* *alchemist.protelisdsl.tests*:
+  Makes sure that you can fire up an instance of Eclipse that can
+  load the plugin
 
 
 #### Recommended configuration
 * Download [the latest Eclipse for Java SE developers][eclipse]. Arch Linux users can use the package extra/eclipse-java, which is rather up-to-date.
-* Install the Gradle plug-in
+* Install Xtext
 	* In Eclipse, click Help -> Eclipse Marketplace...
-	* In the search form enter "gradle", then press Enter
-	* One of the retrieved entries should be "Gradle IDE Pack", click Install
-	* Follow the instructions, accept the license, wait for Eclipse to download and install the product, accept the installation and restart the IDE.
-* Install the FindBugs plug-in
-	* In Eclipse, click Help -> Eclipse Marketplace...
-	* In the search form enter "findbugs", then press Enter
-	* One of the retrieved entries should be "FindBugs Eclipse Plugin", click Install
-	* Follow the instructions, accept the license, wait for Eclipse to download and install the product, accept the installation and restart the IDE.
-* Install the PMD plug-in
-	* **Do not** install eclipse-pmd from the Eclipse Marketplace
-	* In Eclipse, click Help -> Install New Software
-	* In the text field labelled "Work with:", enter: https://sourceforge.net/projects/pmd/files/pmd-eclipse/update-site-latest/
-	* Press Enter
-	* PMD for Eclipse 4 will appear in the plugin list. Select it and click Next.
-	* Follow the instructions, accept the license, wait for Eclipse to download and install the product, accept the installation and restart the IDE.
-* Install the Checkstyle plug-in
-	* In Eclipse, click Help -> Eclipse Marketplace...
-	* In the search form enter "checkstyle", then press Enter
-	* One of the retrieved entries should be "Checkstyle Plug-in" with a written icon whose text is "eclipse-cs", click Install
+	* In the search form enter "xtext", then press Enter
+	* One of the retrieved entries should be "Xtext 2.8.x", click Install
 	* Follow the instructions, accept the license, wait for Eclipse to download and install the product, accept the installation and restart the IDE.
 
 
@@ -136,22 +112,25 @@ The project has been developed using Eclipse, and can be easily imported in such
 * Paste `git@github.com:DanySK/alchemist-dsl-protelis.git` as URI -> Next -> Next
 * Select the directory where you want to clone the repository. Beware that it **does not** point to the current Eclipse workspace by default
 * Next -> Next -> Finish
-* The project will appear in your projects list.
-* Right click on the project, select Gradle -> Refresh Dependencies. If the option is disabled, do first Gradle -> Enable Dependency Management and then try again.
-* Checkstyle, PMD and FindBugs should be pre-configured. **Do not** run Gradle -> Refresh all, because that would delete the automatic invocation of the code checkers.
-
-### Developing the project
-Contributions to this project are welcome. Just some rules:
-1. Commit often. Do not throw at me pull requests with a single giant commit adding or changing the world. Split it in multiple commits and request a merge to the mainline often.
-2. Do not introduce low quality code. All the new code must comply with the checker rules (that are quite strict) and must not introduce any other warning. Resolutions of existing warnings (if any is present) are very welcome instead.
+* The projects will appear in your projects list.
+* Once the repositories are imported, there will likely be a lot of errors.
+* First, if there are "Plugin execution not covered by lifecycle configuration" errors, go to Eclipse Preferences > Maven > Errors/Warnings and switch this error type to warning.  This is OK because Eclipse uses its own build system, and can ignore these Maven problems (which are not due to the Maven configuration, but lack of certain current Eclipse/Maven integrations).
+* Second, go to alchemist.protelisdsl project and run ``src/it.unibo.alchemist.language.protelisdsl/GenerateProtelisDSL.mwe2`` as an MWE2 workflow (ignoring the fact that there are errors).  This generates the DSL using Xtext, and should resolve all of the outstanding errors.
 
 
 #### Building the project
-While developing, you can rely on Eclipse to build the project, it will generally do a very good job.
-If you want to generate the artifacts, you can rely on Gradle. Just point a terminal on the project's root and issue
+While developing, you can rely on Eclipse to build the project, it will generally do decent job.
+If you want to generate the artifacts, you can rely on Maven. Just point a terminal on the project's root and issue
 
 ```bash
-./gradlew
+cd alchemist.protelis.parent
+mvn clean install -q
+```
+
+If you do not have a working graphical environment on your build machine, then make sure to skip testing, because they require to fire up an instance of Eclipse
+```bash
+cd alchemist.protelis.parent
+mvn clean install -q -DskipTests=true
 ```
 
 This will trigger the creation of the artifacts the executions of the tests, the generation of the documentation and of the project reports.
@@ -172,15 +151,5 @@ We use a three level numbering, following the model of [Semantic Versioning][Sem
 [Alchemist]: http://danysk.github.io/alchemist/
 [alchemist-git]: https://github.com/DanySK/alchemist
 [Javadoc]: http://hephaestus.apice.unibo.it/alchemist-build/alchemist-dsl-protelis/alchemist.protelisdsl/target/apidocs/
-[Jars]: https://drone.io/github.com/DanySK/alchemist-dsl-protelis/files
-[reports]: https://drone.io/github.com/DanySK/alchemist-dsl-protelis/files/build/reports/reports.tar
-[dashboard]: http://hephaestus.apice.unibo.it/alchemist-build/alchemist-dsl-protelis/build/reports/buildDashboard/
-[test]: http://hephaestus.apice.unibo.it/alchemist-build/alchemist-dsl-protelis/build/reports/tests/
-[checkstyle]: http://hephaestus.apice.unibo.it/alchemist-build/alchemist-dsl-protelis/build/reports/checkstyle/main.html
-[checkstyle-test]: http://hephaestus.apice.unibo.it/alchemist-build/alchemist-dsl-protelis/build/reports/checkstyle/test.html
-[findbugs]: http://hephaestus.apice.unibo.it/alchemist-build/alchemist-dsl-protelis/build/reports/findbugs/main.html
-[findbugs-test]: http://hephaestus.apice.unibo.it/alchemist-build/alchemist-dsl-protelis/build/reports/findbugs/test.html
-[pmd]: http://hephaestus.apice.unibo.it/alchemist-build/alchemist-dsl-protelis/build/reports/pmd/main.html
-[pmd-test]: http://hephaestus.apice.unibo.it/alchemist-build/alchemist-dsl-protelis/build/reports/pmd/test.html
 [eclipse]: https://eclipse.org/downloads/
 [SemVer]: http://semver.org/spec/v2.0.0.html
