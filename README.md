@@ -14,13 +14,13 @@ A language that allows writing simulations running Protelis.
 	* Follow the instructions, accept the license, wait for Eclipse to download and install the product, accept the installation and restart the IDE.
 * Install the Protelis Eclipse plug-in
 	* In Eclipse, click Help -> Install New Software
-	* In the text field labelled "Work with:", enter: ``http://137.204.107.70/protelis-dsl/stable/``
+	* In the text field labelled "Work with:", enter: ``http://hephaestus.apice.unibo.it/protelis-dsl/stable/``
 	* Press Enter
 	* Protelis will appear in the plugin list. Select it and click Next.
 	* Follow the instructions, accept the license, wait for Eclipse to download and install the product, 
 * Install the Protelis Simulations Eclipse plug-in
 	* In Eclipse, click Help -> Install New Software
-	* In the text field labelled "Work with:", enter: ``http://137.204.107.70/protelis-simulation-dsl/stable/``
+	* In the text field labelled "Work with:", enter: ``http://hephaestus.apice.unibo.it/protelis-simulation-dsl/stable/``
 	* Press Enter
 	* Protelis DSL will appear in the plugin list. Select it and click Next.
 	* Follow the instructions, accept the license, wait for Eclipse to download and install the product, 
@@ -60,26 +60,6 @@ place 100 nodes within rect (0,0,9,9) with program prog
 ### Running a simulation in Alchemist
 
 To understand how to simulate, refer to the [Alchemist main project][alchemist-git] website. The simulator can be downloaded from [here][https://github.com/DanySK/alchemist/releases]
-
-### Basics
-
-This incarnation allows for chemical-like manipulation of LSAs, that despite being semantic object in [SAPERE][SAPERE], here are treated as normal tuples. Various sorts of manipulation are supported, and elements of a tuples can be strings, numbers, or sets.
-
-For a description of the LSA language, and the chemical-like rules format, please refer to the [SAPERE Domain-Specific Language][SAPERE-DSL] documentation.
-
-#### Beware of the Context
-
-It is important to return the correct ``Context``: a ``Context`` too wide will make the simulation slower (even of several orders of magnitude), a ``Context`` too strict will break the dependency graph, and consequently the simulation will be invalid. One frequent error in these cases is that events happen out of order, namely that the simulator at some point goes "back in time" and executes an old event.
-
-* If the agent just wanders around (using the ``moveNode()`` method of ``IEnvironment``) and grabs informations from itself and the environment, then ``Context.LOCAL`` context is correct (and fast).
-* If the agent injects or modifies LSAs in the neighborhood, then the user must also remember to return ``Context.NEIGHBORHOOD`` in the ``getContext()`` method.
-* Finally, if the agent messes up with the LSAs in nodes which are not neighbors (in a SAPERE system, however, this should never happen), then the ``Context.GLOBAL`` is required.
-
-#### Expose the modified LSA templates
-
-If the agent modifies the LSA space content, then the user must take care of adding the LSA template it is modifying to the list of the outgoing dependencies.
-
-If the agent inherits from ``AbstractAction``, it should be done by a call to ``addModifiedMolecule()`` inside the constructor of the new agent. The superclass will take care of announcing such dependency to the engine.
 
 
 ## Build Status
@@ -193,15 +173,15 @@ We use a three levels numbering:
 [SAPERE]: http://www.sapere-project.eu/
 [SAPERE-DSL]: https://github.com/DanySK/alchemist-dsl-sapere
 [alchemist-git]: https://github.com/DanySK/alchemist
-[Javadoc]: http://137.204.107.70/alchemist-build/alchemist-incarnation-sapere/build/docs/javadoc/
+[Javadoc]: http://hephaestus.apice.unibo.it/alchemist-build/alchemist-incarnation-sapere/build/docs/javadoc/
 [Jars]: https://drone.io/github.com/DanySK/alchemist-incarnation-sapere/files
 [reports]: https://drone.io/github.com/DanySK/alchemist-incarnation-sapere/files/build/reports/reports.tar
-[dashboard]: http://137.204.107.70/alchemist-build/alchemist-incarnation-sapere/build/reports/buildDashboard/
-[test]: http://137.204.107.70/alchemist-build/alchemist-incarnation-sapere/build/reports/tests/
-[checkstyle]: http://137.204.107.70/alchemist-build/alchemist-incarnation-sapere/build/reports/checkstyle/main.html
-[checkstyle-test]: http://137.204.107.70/alchemist-build/alchemist-incarnation-sapere/build/reports/checkstyle/test.html
-[findbugs]: http://137.204.107.70/alchemist-build/alchemist-incarnation-sapere/build/reports/findbugs/main.html
-[findbugs-test]: http://137.204.107.70/alchemist-build/alchemist-incarnation-sapere/build/reports/findbugs/test.html
-[pmd]: http://137.204.107.70/alchemist-build/alchemist-incarnation-sapere/build/reports/pmd/main.html
-[pmd-test]: http://137.204.107.70/alchemist-build/alchemist-incarnation-sapere/build/reports/pmd/test.html
+[dashboard]: http://hephaestus.apice.unibo.it/alchemist-build/alchemist-incarnation-sapere/build/reports/buildDashboard/
+[test]: http://hephaestus.apice.unibo.it/alchemist-build/alchemist-incarnation-sapere/build/reports/tests/
+[checkstyle]: http://hephaestus.apice.unibo.it/alchemist-build/alchemist-incarnation-sapere/build/reports/checkstyle/main.html
+[checkstyle-test]: http://hephaestus.apice.unibo.it/alchemist-build/alchemist-incarnation-sapere/build/reports/checkstyle/test.html
+[findbugs]: http://hephaestus.apice.unibo.it/alchemist-build/alchemist-incarnation-sapere/build/reports/findbugs/main.html
+[findbugs-test]: http://hephaestus.apice.unibo.it/alchemist-build/alchemist-incarnation-sapere/build/reports/findbugs/test.html
+[pmd]: http://hephaestus.apice.unibo.it/alchemist-build/alchemist-incarnation-sapere/build/reports/pmd/main.html
+[pmd-test]: http://hephaestus.apice.unibo.it/alchemist-build/alchemist-incarnation-sapere/build/reports/pmd/test.html
 [eclipse]: https://eclipse.org/downloads/
