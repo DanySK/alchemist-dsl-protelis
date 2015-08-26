@@ -10,7 +10,7 @@ A language that allows writing simulations running Protelis.
 * Install Xtext
 	* In Eclipse, click Help -> Eclipse Marketplace...
 	* In the search form enter "xtext", then press Enter
-	* One of the retrieved entries should be "Xtext 2.x.x" (version should be 2.7.3 or newer), click Install
+	* One of the retrieved entries should be "Xtext 2.8.x", click Install
 	* Follow the instructions, accept the license, wait for Eclipse to download and install the product, accept the installation and restart the IDE.
 * Install the Protelis Eclipse plug-in
 	* In Eclipse, click Help -> Install New Software
