@@ -1,8 +1,6 @@
-# WORK IN PROGRESS!
-
 # Alchemist DSL for Protelis
 
-A language that allows writing simulations running Protelis.
+A language that allows writing [Alchemist][Alchemist] simulations running Protelis.
 
 ## Setup
 
@@ -30,8 +28,8 @@ A language that allows writing simulations running Protelis.
 * Open Eclipse on a workspace of your choice
 * Click on File -> New -> Java Project
 * Give the project a name, then click "Finish"
-* Find the "src" folder
-* Create a test.psim file
+* Find the ``src`` folder
+* Create a ``test.psim`` file
 * Eclipse will prompt you with a question: ``Do you want to add the Xtext nature to the project "(your project name here")?``. Answer "Yes"
 	* If Eclipse does not ask you to add such nature, right click on the project, go to Configure -> Add Xtext Nature
 * Open the test.psim file
@@ -59,11 +57,11 @@ place 100 nodes within rect (0,0,9,9) with program prog
 
 ### Running a simulation in Alchemist
 
-To understand how to simulate, refer to the [Alchemist main project][alchemist-git] website. The simulator can be downloaded from [here][https://github.com/DanySK/alchemist/releases]
+To understand how to simulate, refer to the [Alchemist main project][alchemist-git] website. The simulator can be downloaded from [here](https://github.com/DanySK/alchemist/releases)
 
 
 ## Build Status
-[![Build Status](https://drone.io/github.com/DanySK/alchemist-incarnation-sapere/status.png)](https://drone.io/github.com/DanySK/alchemist-incarnation-sapere/latest)
+[![Build Status](https://drone.io/github.com/DanySK/alchemist-dsl-protelis/status.png)](https://drone.io/github.com/DanySK/alchemist-dsl-protelis/latest)
 
 
 ### Javadocs
@@ -133,7 +131,7 @@ The project has been developed using Eclipse, and can be easily imported in such
 * Open Eclipse
 * Click File -> Import -> Git -> Projects from Git -> Next
 * Clone URI -> Next
-* Paste `git@github.com:DanySK/alchemist-incarnation-sapere.git` as URI -> Next -> Next
+* Paste `git@github.com:DanySK/alchemist-dsl-protelis.git` as URI -> Next -> Next
 * Select the directory where you want to clone the repository. Beware that it **does not** point to the current Eclipse workspace by default
 * Next -> Next -> Finish
 * The project will appear in your projects list.
@@ -159,7 +157,7 @@ This will trigger the creation of the artifacts the executions of the tests, the
 
 #### Release numbers explained
 We release often. We are not scared of high version numbers, they are just numbers in the end.
-We use a three levels numbering:
+We use a three level numbering, following the model of [Semantic Versioning][SemVer]:
 
 * **Update of the minor number**: there are some small changes, and no backwards compatibility is broken. Probably, it is better saying that there is nothing suggesting that any project that depends on this one may have any problem compiling or running. Raise the minor version if there is just a bug fix, or a code improvement, such that no interface, constructor, or non-private member of a class is modified either in syntax or in semantics. Also, no new classes should be provided.
 	* Example: switch from 1.2.3 to 1.2.4 
@@ -170,18 +168,17 @@ We use a three levels numbering:
 
 
 [Alchemist]: http://danysk.github.io/alchemist/
-[SAPERE]: http://www.sapere-project.eu/
-[SAPERE-DSL]: https://github.com/DanySK/alchemist-dsl-sapere
 [alchemist-git]: https://github.com/DanySK/alchemist
-[Javadoc]: http://hephaestus.apice.unibo.it/alchemist-build/alchemist-incarnation-sapere/build/docs/javadoc/
-[Jars]: https://drone.io/github.com/DanySK/alchemist-incarnation-sapere/files
-[reports]: https://drone.io/github.com/DanySK/alchemist-incarnation-sapere/files/build/reports/reports.tar
-[dashboard]: http://hephaestus.apice.unibo.it/alchemist-build/alchemist-incarnation-sapere/build/reports/buildDashboard/
-[test]: http://hephaestus.apice.unibo.it/alchemist-build/alchemist-incarnation-sapere/build/reports/tests/
-[checkstyle]: http://hephaestus.apice.unibo.it/alchemist-build/alchemist-incarnation-sapere/build/reports/checkstyle/main.html
-[checkstyle-test]: http://hephaestus.apice.unibo.it/alchemist-build/alchemist-incarnation-sapere/build/reports/checkstyle/test.html
-[findbugs]: http://hephaestus.apice.unibo.it/alchemist-build/alchemist-incarnation-sapere/build/reports/findbugs/main.html
-[findbugs-test]: http://hephaestus.apice.unibo.it/alchemist-build/alchemist-incarnation-sapere/build/reports/findbugs/test.html
-[pmd]: http://hephaestus.apice.unibo.it/alchemist-build/alchemist-incarnation-sapere/build/reports/pmd/main.html
-[pmd-test]: http://hephaestus.apice.unibo.it/alchemist-build/alchemist-incarnation-sapere/build/reports/pmd/test.html
+[Javadoc]: http://hephaestus.apice.unibo.it/alchemist-build/alchemist-dsl-protelis/build/docs/javadoc/
+[Jars]: https://drone.io/github.com/DanySK/alchemist-dsl-protelis/files
+[reports]: https://drone.io/github.com/DanySK/alchemist-dsl-protelis/files/build/reports/reports.tar
+[dashboard]: http://hephaestus.apice.unibo.it/alchemist-build/alchemist-dsl-protelis/build/reports/buildDashboard/
+[test]: http://hephaestus.apice.unibo.it/alchemist-build/alchemist-dsl-protelis/build/reports/tests/
+[checkstyle]: http://hephaestus.apice.unibo.it/alchemist-build/alchemist-dsl-protelis/build/reports/checkstyle/main.html
+[checkstyle-test]: http://hephaestus.apice.unibo.it/alchemist-build/alchemist-dsl-protelis/build/reports/checkstyle/test.html
+[findbugs]: http://hephaestus.apice.unibo.it/alchemist-build/alchemist-dsl-protelis/build/reports/findbugs/main.html
+[findbugs-test]: http://hephaestus.apice.unibo.it/alchemist-build/alchemist-dsl-protelis/build/reports/findbugs/test.html
+[pmd]: http://hephaestus.apice.unibo.it/alchemist-build/alchemist-dsl-protelis/build/reports/pmd/main.html
+[pmd-test]: http://hephaestus.apice.unibo.it/alchemist-build/alchemist-dsl-protelis/build/reports/pmd/test.html
 [eclipse]: https://eclipse.org/downloads/
+[SemVer]: http://semver.org/spec/v2.0.0.html
