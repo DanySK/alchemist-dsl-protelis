@@ -7,8 +7,18 @@ A language that allows writing simulations running Protelis.
 ## Setup
 
 * Download [the latest Eclipse for Java SE developers][eclipse]. Arch Linux users can use the package extra/eclipse-java, which is rather up-to-date.
-
-
+* Install the Protelis Eclipse plug-in
+	* In Eclipse, click Help -> Install New Software
+	* In the text field labelled "Work with:", enter: ``http://137.204.107.70/protelis-dsl/stable/``
+	* Press Enter
+	* Protelis will appear in the plugin list. Select it and click Next.
+	* Follow the instructions, accept the license, wait for Eclipse to download and install the product, 
+* Install the Protelis Simulations Eclipse plug-in
+	* In Eclipse, click Help -> Install New Software
+	* In the text field labelled "Work with:", enter: ``http://137.204.107.70/protelis-simulation-dsl/stable/``
+	* Press Enter
+	* Protelis DSL will appear in the plugin list. Select it and click Next.
+	* Follow the instructions, accept the license, wait for Eclipse to download and install the product, 
 
 
 
@@ -50,7 +60,7 @@ The documentation for any specific version of this library is released on Maven 
 
 
 ### Downloads
-
+i
 The latest artifacts for this project can be downloaded [here][Jars]. This page includes three artifacts:
 * A jar file containing the compiled class files
 * A jar file containing the source code
