@@ -16,8 +16,8 @@ Workflow {
     	scanClassPath = true
     	platformUri = "${runtimeProject}/.."
     	// The following two lines can be removed, if Xbase is not used.
-    	registerGeneratedEPackage = "it.unibo.alchemist.language.protelis.protelis.ProtelisPackage"
-    	registerGenModelFile = "platform:/resource/alchemist.protelis/model/generated/Protelis.genmodel"
+    	registerGeneratedEPackage = "org.protelis.parser.protelis.ProtelisPackage"
+    	registerGenModelFile = "platform:/resource/protelis.parser/model/generated/Protelis.genmodel"
     }
     
     component = DirectoryCleaner {

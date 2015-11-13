@@ -12,7 +12,7 @@ package it.unibo.alchemist.language.protelis.ui.quickfix
  *
  * see http://www.eclipse.org/Xtext/documentation.html#quickfixes
  */
-class ProtelisDSLQuickfixProvider extends it.unibo.alchemist.language.protelis.ui.quickfix.ProtelisQuickfixProvider {
+class ProtelisDSLQuickfixProvider extends org.protelis.parser.ui.quickfix.ProtelisQuickfixProvider {
 
 //	@Fix(MyDslValidator::INVALID_NAME)
 //	def capitalizeName(Issue issue, IssueResolutionAcceptor acceptor) {

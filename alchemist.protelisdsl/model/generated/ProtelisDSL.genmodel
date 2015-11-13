@@ -4,7 +4,7 @@
     editorDirectory="/alchemist.protelisdsl.editor/src" modelPluginID="alchemist.protelisdsl"
     forceOverwrite="true" modelName="ProtelisDSL" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="6.0" copyrightFields="false" editPluginID="alchemist.protelisdsl.edit"
-    editorPluginID="alchemist.protelisdsl.editor" runtimeVersion="2.10" usedGenPackages="platform:/resource/alchemist.protelis/model/generated/Protelis.genmodel#//protelis">
+    editorPluginID="alchemist.protelisdsl.editor" runtimeVersion="2.10" usedGenPackages="platform:/resource/protelis.parser/model/generated/Protelis.genmodel#//protelis">
   <genPackages prefix="ProtelisDSL" basePackage="it.unibo.alchemist.language.protelis"
       disposableProviderFactory="true" fileExtensions="psim" ecorePackage="ProtelisDSL.ecore#/">
     <genClasses ecoreClass="ProtelisDSL.ecore#//Environment">

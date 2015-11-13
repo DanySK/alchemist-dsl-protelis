@@ -35,7 +35,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Prog">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="programName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="program" eType="ecore:EClass platform:/resource/alchemist.protelis/model/generated/Protelis.ecore#//Program"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="program" eType="ecore:EClass platform:/resource/protelis.parser/model/generated/Protelis.ecore#//Module"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="timeDistribution" eType="#//JavaConstructor"
         containment="true"/>
