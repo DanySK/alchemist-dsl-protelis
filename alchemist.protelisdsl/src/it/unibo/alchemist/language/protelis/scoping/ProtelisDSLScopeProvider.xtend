@@ -10,6 +10,6 @@ package it.unibo.alchemist.language.protelis.scoping
  * on how and when to use it 
  *
  */
-class ProtelisDSLScopeProvider extends it.unibo.alchemist.language.protelis.scoping.ProtelisScopeProvider {
+class ProtelisDSLScopeProvider extends org.protelis.parser.scoping.ProtelisScopeProvider {
 
 }

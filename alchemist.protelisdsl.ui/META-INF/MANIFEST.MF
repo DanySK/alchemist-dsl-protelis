@@ -2,11 +2,11 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: alchemist.protelisdsl.ui
 Bundle-Vendor: Alma Mater Studiorum Università di Bologna
-Bundle-Version: 3.0.2
+Bundle-Version: 3.1.0
 Bundle-SymbolicName: alchemist.protelisdsl.ui; singleton:=true
 Bundle-ActivationPolicy: lazy
-Require-Bundle: alchemist.protelisdsl;bundle-version="3.0.2";visibility:=reexport,
- alchemist.protelis.ui;bundle-version="3.1.0";visibility:=reexport,
+Require-Bundle: alchemist.protelisdsl;bundle-version="3.1.0";visibility:=reexport,
+ protelis.parser.ui;bundle-version="4.0.0";visibility:=reexport,
  org.eclipse.xtext.ui,
  org.eclipse.ui.editors;bundle-version="3.5.0",
  org.eclipse.ui.ide;bundle-version="3.5.0",
