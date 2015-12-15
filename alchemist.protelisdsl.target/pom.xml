@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>it.unibo.alchemist</groupId>
 		<artifactId>alchemist.protelisdsl.parent</artifactId>
-		<version>3.1.0</version>
+		<version>3.2.0</version>
 		<relativePath>../alchemist.protelisdsl.parent</relativePath>
 	</parent>
 
