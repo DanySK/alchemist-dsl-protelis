@@ -13,17 +13,16 @@ A language that allows writing [Alchemist][Alchemist] simulations running Protel
 * Install the Protelis Eclipse plug-in
 	* In Eclipse, click Help -> Install New Software
 	* In the text field labelled "Work with:", enter: ``http://hephaestus.apice.unibo.it/protelis-dsl/stable/``
-		* If you want to work with the last nightly, choose instead: ``http://hephaestus.apice.unibo.it/alchemist-build/alchemist-protelis-parser/alchemist.protelis.repository/target/repository/``
+		* If you want to work with the last nightly, choose instead: ``http://hephaestus.apice.unibo.it/protelis-build/protelis-parser/protelis.parser.repository/target/repository/``
 	* Protelis will appear in the plugin list. Select it and click Next.
 	* Follow the instructions, accept the license, wait for Eclipse to download and install the product, 
-* Install the Protelis Simulations Eclipse plug-in
+* Install the Protelis Simulations Eclipse plug-in (this plug-in **is no longer supported** and works only with legacy systems)
 	* In Eclipse, click Help -> Install New Software
 	* In the text field labelled "Work with:", enter: ``http://hephaestus.apice.unibo.it/protelis-simulation-dsl/stable/``
-		* If you want to work with the last nightly, choose instead: ``http://hephaestus.apice.unibo.it/alchemist-build/alchemist-dsl-protelis/alchemist.protelisdsl.repository/target/repository/``
-
+		* If you want to work with the last nightly, choose instead: ``http://hephaestus.apice.unibo.it/protelis-simulation-dsl/devel/``
 	* Press Enter
 	* Protelis DSL will appear in the plugin list. Select it and click Next.
-	* Follow the instructions, accept the license, wait for Eclipse to download and install the product, 
+	* Follow the instructions, accept the license, wait for Eclipse to download and install the product
 
 ### Test installation
 
@@ -36,18 +35,18 @@ A language that allows writing [Alchemist][Alchemist] simulations running Protel
 	* If Eclipse does not ask you to add such nature, right click on the project, go to Configure -> Add Xtext Nature
 * Open the ``test.psim`` file
 * It should show an error
-* Type the following (you can use ctrl + space, or your user defined shortcut, and use autocompletion): 
+* Type the following (you can use ctrl + space, or your user defined shortcut, and use autocompletion):
 ```
 val x = 1
 
 default environment
 linking nodes in range 1.5
- 
-protelis program prog 
+
+protelis program prog
 1
 @x,x
-  
-place 100 nodes within rect (0,0,9,9) with program prog 
+
+place 100 nodes within rect (0,0,9,9) with program prog
 ```
 * A folder named ``src-gen`` will appear, containing a ``test.xml`` file. This file can be loaded by [Alchemist][alchemist-git]
 * If such file is correctly generated, your installation has been successful.
@@ -141,11 +140,11 @@ We release often. We are not scared of high version numbers, they are just numbe
 We use a three level numbering, following the model of [Semantic Versioning][SemVer]:
 
 * **Update of the minor number**: there are some small changes, and no backwards compatibility is broken. Probably, it is better saying that there is nothing suggesting that any project that depends on this one may have any problem compiling or running. Raise the minor version if there is just a bug fix, or a code improvement, such that no interface, constructor, or non-private member of a class is modified either in syntax or in semantics. Also, no new classes should be provided.
-	* Example: switch from 1.2.3 to 1.2.4 
+	* Example: switch from 1.2.3 to 1.2.4
 * **Update of the middle number**: there are changes that should not break any backwards compatibility, but the possibility exists. Raise the middle version number if there is a remote probability that projects that depend upon this one may have problems compiling if they update. For instance, if you have added a new class, since a depending project may have already defined it, that is enough to trigger a mid-number change. Also updating the version ranges of a dependency, or adding a new dependency, should cause the mid-number to raise. As for minor numbers, no changes to interfaces, constructors or non-private member of classes are allowed. If mid-number is update, minor number should be reset to 0.
-	* Example: switch from 1.2.3 to 1.3.0 
+	* Example: switch from 1.2.3 to 1.3.0
 * **Update of the major number**: *non-backwards-compatible change*. If a change in interfaces, constructors, or public member of some class have happened, a new major number should be issued. This is also the case if the semantics of some method has changed. In general, if there is a high probability that projects depending upon this one may experience compile-time or run-time issues if they switch to the new version, then a new major number should be adopted. If the major version number is upgraded, the mid and minor numbers should be reset to 0.
-	* Example: switch from 1.2.3 to 2.0.0 
+	* Example: switch from 1.2.3 to 2.0.0
 
 
 [Alchemist]: http://danysk.github.io/alchemist/
