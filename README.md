@@ -1,9 +1,11 @@
+# **WARNING**
+This project has been discontinued. Please refer to the [Alchemist][Alchemist] website for up to date informations on how to run Protelis code in an Alchemist simulated environment.
+
 # Alchemist DSL for Protelis
 
 A language that allows writing [Alchemist][Alchemist] simulations running Protelis.
 
 ## Setup
-
 * Download [the latest Eclipse for Java SE developers][eclipse]. Arch Linux users can use the package extra/eclipse-java, which is rather up-to-date.
 * Install Xtext
 	* In Eclipse, click Help -> Eclipse Marketplace...
@@ -148,8 +150,8 @@ We use a three level numbering, following the model of [Semantic Versioning][Sem
 	* Example: switch from 1.2.3 to 2.0.0 
 
 
-[Alchemist]: http://danysk.github.io/alchemist/
-[alchemist-git]: https://github.com/DanySK/alchemist
+[Alchemist]: http://alchemistsimulator.github.io/
+[alchemist-git]: https://github.com/AlchemistSimulator/
 [Javadoc]: http://hephaestus.apice.unibo.it/alchemist-build/alchemist-dsl-protelis/alchemist.protelisdsl/target/apidocs/
 [eclipse]: https://eclipse.org/downloads/
 [SemVer]: http://semver.org/spec/v2.0.0.html
