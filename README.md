@@ -13,17 +13,16 @@ A language that allows writing [Alchemist][Alchemist] simulations running Protel
 * Install the Protelis Eclipse plug-in
 	* In Eclipse, click Help -> Install New Software
 	* In the text field labelled "Work with:", enter: ``http://hephaestus.apice.unibo.it/protelis-dsl/stable/``
-		* If you want to work with the last nightly, choose instead: ``http://hephaestus.apice.unibo.it/alchemist-build/alchemist-protelis-parser/alchemist.protelis.repository/target/repository/``
+		* If you want to work with the last nightly, choose instead: ``http://hephaestus.apice.unibo.it/protelis-build/protelis-parser/protelis.parser.repository/target/repository/``
 	* Protelis will appear in the plugin list. Select it and click Next.
 	* Follow the instructions, accept the license, wait for Eclipse to download and install the product, 
-* Install the Protelis Simulations Eclipse plug-in
+* Install the Protelis Simulations Eclipse plug-in (this plug-in **is no more supported** and works only with legacy builds)
 	* In Eclipse, click Help -> Install New Software
 	* In the text field labelled "Work with:", enter: ``http://hephaestus.apice.unibo.it/protelis-simulation-dsl/stable/``
-		* If you want to work with the last nightly, choose instead: ``http://hephaestus.apice.unibo.it/alchemist-build/alchemist-dsl-protelis/alchemist.protelisdsl.repository/target/repository/``
-
+		* If you want to work with the last nightly, choose instead: ``http://hephaestus.apice.unibo.it/protelis-simulation-dsl/devel/``
 	* Press Enter
 	* Protelis DSL will appear in the plugin list. Select it and click Next.
-	* Follow the instructions, accept the license, wait for Eclipse to download and install the product, 
+	* Follow the instructions, accept the license, wait for Eclipse to download and install the product
 
 ### Test installation
 
