@@ -1,5 +1,5 @@
 # **WARNING**
-This project has been discontinued. Please refer to the [Alchemist][Alchemist] website for up to date informations on how to run Protelis code in an Alchemist simulated environment.
+**This project has been discontinued.** Please refer to the [Alchemist][Alchemist] website for up to date informations on how to run Protelis code in an Alchemist simulated environment.
 
 # Alchemist DSL for Protelis
 
